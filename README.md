@@ -1,113 +1,114 @@
 # Análise de Desempenho no Campeonato Brasileiro Série A
-Este projeto tem como objetivo realizar análises sobre o desempenho de times no Campeonato Brasileiro Série A, utilizando Python, Pandas e Matplotlib para manipulação de dados e criação de visualizações. O código permite extrair informações como desempenho em vitórias, empates e derrotas, média de público nos estádios e comparações entre diferentes times e anos.
 
-Funcionalidades
-1. Desempenho de um time em um ano específico
-Filtra os dados de um time escolhido no ano selecionado pelo usuário.
-Calcula:
-Número de vitórias, empates e derrotas como mandante.
-Cria um gráfico de pizza que visualiza a proporção de vitórias, empates e derrotas do time no ano analisado.
-2. Média de público por time e ano
-Permite comparar a média de público entre dois times no mesmo ano.
-Calcula a média considerando apenas os jogos onde cada time foi mandante.
-Exibe um gráfico de barras para comparar visualmente as médias de público entre os dois times escolhidos.
-3. Aproveitamento como mandante e visitante
-Analisa o desempenho de um time como mandante e visitante em um ano específico.
-Calcula:
-Número de vitórias, empates e derrotas em casa e fora.
-Aproveitamento percentual em pontos (em casa e fora).
-Exibe um gráfico de barras para visualizar o aproveitamento em diferentes contextos.
-Estrutura do Código
-Carregamento dos Dados
+Este projeto utiliza **Python**, **Pandas** e **Matplotlib** para realizar análises do Campeonato Brasileiro Série A. Ele permite explorar o desempenho dos times em diferentes contextos, analisar médias de público e visualizar resultados de forma intuitiva.
 
-Os dados são carregados de um arquivo CSV (brasileirao_serie_a.csv) que contém informações como:
-Ano do campeonato (ano_campeonato),
-Times mandante e visitante,
-Número de gols,
-Público presente.
-Os valores ausentes (nulos) são tratados, garantindo consistência para cálculos e análises.
-Tratamento e Filtragem
+---
 
-Filtragem dos jogos baseada no ano escolhido pelo usuário.
-Foco nos jogos de um time específico, seja como mandante ou visitante.
-Cálculos Estatísticos
+## Funcionalidades
 
-Cálculo de vitórias, empates, derrotas e médias de público.
-Determinação de aproveitamento percentual em pontos possíveis.
-Visualização dos Resultados
+### 1. **Desempenho de um time em um ano**
+- Filtra dados de um time em um ano específico.
+- Calcula:
+  - Vitórias, empates e derrotas como mandante.
+- Gera um gráfico de pizza mostrando a proporção dos resultados.
 
-Gráficos intuitivos são criados usando Matplotlib:
-Gráfico de Pizza: Visualiza proporções de resultados (vitórias, empates, derrotas).
-Gráfico de Barras: Compara médias de público ou aproveitamentos.
-Pré-requisitos
-Antes de executar o projeto, certifique-se de que seu ambiente possui:
+### 2. **Média de público por time e ano**
+- Compara a média de público entre dois times no mesmo ano.
+- Calcula a média de público considerando apenas os jogos como mandante.
+- Exibe um gráfico de barras para comparação.
 
-Python 3.x instalado.
-As bibliotecas necessárias:
-pandas
-matplotlib
-Você pode instalá-las com o seguinte comando:
+### 3. **Aproveitamento como mandante e visitante**
+- Analisa o desempenho de um time em casa e fora.
+- Calcula:
+  - Vitórias, empates, derrotas e aproveitamento percentual.
+- Gera um gráfico de barras para visualização.
 
-bash
-Copy code
-pip install pandas matplotlib
-Como Executar
-Certifique-se de que o arquivo CSV (brasileirao_serie_a.csv) está no mesmo diretório do script.
+---
 
-Execute qualquer um dos scripts dependendo da análise desejada:
+## Estrutura do Projeto
 
-Desempenho de um time:
-bash
-Copy code
-python desempenho_time.py
-Comparação de média de público:
-bash
-Copy code
-python media_publico.py
-Aproveitamento mandante e visitante:
-bash
-Copy code
-python aproveitamento.py
-Siga as instruções interativas para inserir:
+### **Carregamento e Tratamento dos Dados**
+- Dados extraídos de um arquivo `CSV` (`brasileirao_serie_a.csv`) contendo:
+  - **Colunas**: `ano_campeonato`, `time_mandante`, `time_visitante`, `gols_mandante`, `gols_visitante`, `publico`.
+- Tratamento de valores ausentes para garantir consistência.
 
-Ano do campeonato.
-Nome do time (ou times) para análise.
-Visualize os resultados no console e nos gráficos gerados.
+### **Análises Realizadas**
+- Filtragem por ano e time (mandante/visitante).
+- Cálculo de estatísticas: vitórias, empates, derrotas, médias de público e aproveitamento percentual.
 
-Estrutura do Arquivo CSV
-O arquivo brasileirao_serie_a.csv deve conter as seguintes colunas:
+### **Visualização**
+- **Gráficos de Pizza**: Proporção de vitórias, empates e derrotas.
+- **Gráficos de Barras**: Comparação de médias de público e aproveitamento.
 
-ano_campeonato: Ano em que a partida ocorreu.
-time_mandante: Nome do time mandante.
-time_visitante: Nome do time visitante.
-gols_mandante: Gols marcados pelo time mandante.
-gols_visitante: Gols marcados pelo time visitante.
-publico: Número de espectadores presentes na partida.
-Exemplos de Uso
-Exemplo 1: Desempenho de um time
-Usuário escolhe o ano 2023 e o time Flamengo.
-O script calcula vitórias, empates e derrotas do Flamengo como mandante em 2023.
-Um gráfico de pizza é exibido mostrando o desempenho do time.
-Exemplo 2: Comparação de média de público
-Usuário escolhe o ano 2022, Flamengo e Palmeiras.
-O script calcula as médias de público de ambos os times como mandantes.
-Um gráfico de barras é exibido comparando essas médias.
-Exemplo 3: Aproveitamento em casa e fora
-Usuário escolhe o ano 2021 e o time São Paulo.
-O script calcula o aproveitamento do time em pontos como mandante e visitante.
-Um gráfico de barras é exibido para visualizar o desempenho.
-Possíveis Melhorias
-Adicionar suporte para análise de desempenho como visitante.
-Permitir comparações diretas entre dois times no mesmo ano, incluindo desempenho e resultados.
-Implementar análises mais avançadas, como saldo de gols ou eficiência do ataque/defesa.
-Contribuição
-Sinta-se à vontade para contribuir com melhorias no código, seja adicionando novas funcionalidades ou corrigindo bugs. Para isso:
+---
 
-Faça um fork do repositório.
-Crie uma branch para sua alteração:
-bash
-Copy code
-git checkout -b minha-alteracao
-Envie um pull request com suas alterações.
-Licença
-Este projeto é de livre uso para fins educacionais. Se utilizar este código como base, por favor, dê os créditos adequados.
+## Como Executar
+
+1. **Pré-requisitos**:
+   - Python 3.x instalado.
+   - Instalar bibliotecas necessárias:
+     ```bash
+     pip install pandas matplotlib
+     ```
+2. **Executar scripts**:
+   - Certifique-se de que o arquivo `brasileirao_serie_a.csv` está no mesmo diretório do script.
+   - Execute o script desejado:
+     - Desempenho de um time:
+       ```bash
+       python desempenho_time.py
+       ```
+     - Comparação de público:
+       ```bash
+       python media_publico.py
+       ```
+     - Aproveitamento:
+       ```bash
+       python aproveitamento.py
+       ```
+3. **Interação**:
+   - Insira:
+     - Ano do campeonato.
+     - Nome do time (ou times) para análise.
+   - Visualize os resultados e gráficos.
+
+---
+
+## Exemplos de Uso
+
+### 1. **Desempenho de um time**
+- Ano: 2023 | Time: Flamengo.
+- Resultado: gráfico de pizza mostrando vitórias, empates e derrotas como mandante.
+
+### 2. **Comparação de público**
+- Ano: 2022 | Times: Flamengo e Palmeiras.
+- Resultado: gráfico de barras comparando as médias de público.
+
+### 3. **Aproveitamento em casa e fora**
+- Ano: 2021 | Time: São Paulo.
+- Resultado: gráfico de barras com o aproveitamento em casa e fora.
+
+---
+
+## Melhorias Futuras
+- Suporte para análise de desempenho como visitante.
+- Comparação direta entre dois times no mesmo ano.
+- Adicionar análises mais detalhadas, como saldo de gols e eficiência defensiva.
+
+---
+
+## Contribuição
+
+Contribuições são bem-vindas! Siga os passos:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua alteração:
+   ```bash
+   git checkout -b minha-alteracao
+   ```
+3. Envie um pull request.
+
+---
+
+## Licença
+
+Este projeto é de uso livre para fins educacionais. Caso utilize este código, dê os devidos créditos. 🚀 
